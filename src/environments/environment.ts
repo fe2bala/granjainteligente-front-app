@@ -3,7 +3,92 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baias: [
+    {
+      name: "Lucas",
+      id: 2,
+      status: false,
+      temperatura: {
+        currentTemperature: 20,
+        temperatureSet: 26,
+        id: 5,
+        data: null,
+        estado: true,
+        descricao: "SensorTemperatura",
+        auto: false
+      },
+      luminosidade: {
+        luminosidade: true,
+        id: 6,
+        data: null,
+        estado: true,
+        descricao: "SensorIluminação",
+        auto: false
+      },
+      alimento: {
+        nivel: 30,
+        nivelSet: 60,
+        id: 4,
+        data: null,
+        estado: true,
+        descricao: "SensorAlimentação",
+        auto: false
+      },
+      
+      agua: {
+        nivel: 70,
+        nivelSet: 60,
+        id: 4,
+        data: null,
+        estado: true,
+        descricao: "SensorAgua",
+        auto: true
+      },
+      age: 0
+    },
+    {
+      name: "Joao",
+      id: 1,
+      status: true,
+      temperatura: {
+        currentTemperature: 21,
+        temperatureSet: 26,
+        id: 2,
+        data: null,
+        estado: true,
+        descricao: "SensorAlimentação",
+        auto: true
+      },
+      luminosidade: {
+        luminosidade: true,
+        id: 3,
+        data: null,
+        estado: true,
+        descricao: "SensorIluminação",
+        auto: false
+      },
+      alimento: {
+        nivel: 30,
+        nivelSet: 60,
+        id: 1,
+        data: null,
+        estado: true,
+        descricao: "SensorAlimentação",
+        auto: true
+      },
+      agua: {
+        nivel: 30,
+        nivelSet: 60,
+        id: 4,
+        data: null,
+        estado: true,
+        descricao: "SensoraGUA",
+        auto: false
+      },
+      age: 2
+    }
+  ]
 };
 
 /*
