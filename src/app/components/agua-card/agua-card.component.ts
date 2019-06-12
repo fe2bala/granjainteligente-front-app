@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-agua-card',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AguaCardComponent implements OnInit {
 
+  @Input() agua = {};
   constructor() { }
 
   ngOnInit() {
+  }
+  toggleWaterAuto(){
+    this.agua["auto"] = !this.agua["auto"]
   }
 
 }

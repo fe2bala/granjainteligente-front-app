@@ -61,15 +61,15 @@ export const environment = {
         auto: true
       },
       luminosidade: {
-        luminosidade: true,
+        luminosidade: false,
         id: 3,
         data: null,
-        estado: true,
+        estado: false,
         descricao: "SensorIluminação",
         auto: false
       },
       alimento: {
-        nivel: 30,
+        nivel: 50,
         nivelSet: 60,
         id: 1,
         data: null,
