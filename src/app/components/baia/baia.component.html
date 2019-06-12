@@ -7,20 +7,20 @@
   <!-- Content Row -->
   <div class="row">
     <div class="col-xl-3 col-md-6 mb-4">
-      <app-temperatura-card [temperatura]="baia.temperatura"></app-temperatura-card>
+      <app-temperatura-card *ngIf="baia.temperatura" [temperatura]="baia.temperatura"></app-temperatura-card>
     </div>
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <app-agua-card [agua]="baia.agua"></app-agua-card>  
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <app-comida-card [comida]="baia.alimento"></app-comida-card>
+    <div  class="col-xl-3 col-md-6 mb-4">
+      <app-agua-card *ngIf="baia.agua" [agua]="baia.agua"></app-agua-card>  
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
     <div class="col-xl-3 col-md-6 mb-4">
-      <app-iluminacao-card [iluminacao]="baia.luminosidade"></app-iluminacao-card>
+      <app-comida-card *ngIf="baia.alimento" [comida]="baia.alimento"></app-comida-card>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div  class="col-xl-3 col-md-6 mb-4">
+      <app-iluminacao-card *ngIf="baia.luminosidade" [iluminacao]="baia.luminosidade"></app-iluminacao-card>
     </div>
   </div>

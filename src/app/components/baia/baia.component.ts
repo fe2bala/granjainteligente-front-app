@@ -11,7 +11,7 @@ export class BaiaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
 }

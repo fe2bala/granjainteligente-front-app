@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { BaiaService } from 'src/app/services/baia.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,14 @@ import { environment } from 'src/environments/environment';
 export class HomeComponent implements OnInit {
 
   public baias:Array<Object>=[];
-  constructor() { }
+  constructor(private baiaService: BaiaService) { }
 
   ngOnInit() {
-    this.baias = environment.baias;
+
+    this.baiaService.getBaias().subscribe((data:Array<Object>)=>{
+      this.baias=data
+
+    });
   }
 
 }
