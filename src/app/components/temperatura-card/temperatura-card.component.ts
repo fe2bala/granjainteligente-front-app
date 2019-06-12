@@ -12,5 +12,9 @@ export class TemperaturaCardComponent implements OnInit {
 
   ngOnInit() {
   }
+  toggleTempAuto(){
+    this.temperatura["auto"] = !this.temperatura["auto"]
+    //comando para atualizar no banco 
+  }
 
 }

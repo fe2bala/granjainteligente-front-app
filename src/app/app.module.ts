@@ -8,6 +8,8 @@ import { BaiaComponent } from './components/baia/baia.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TemperaturaCardComponent } from './components/temperatura-card/temperatura-card.component';
 import { AguaCardComponent } from './components/agua-card/agua-card.component';
+import { ComidaCardComponent } from './components/comida-card/comida-card.component';
+import { IluminacaoCardComponent } from './components/iluminacao-card/iluminacao-card.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { AguaCardComponent } from './components/agua-card/agua-card.component';
     BaiaComponent,
     SidebarComponent,
     TemperaturaCardComponent,
-    AguaCardComponent
+    AguaCardComponent,
+    ComidaCardComponent,
+    IluminacaoCardComponent
   ],
   imports: [
     BrowserModule,

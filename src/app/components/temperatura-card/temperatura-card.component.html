@@ -19,11 +19,11 @@
           <!-- <span class="badge badge-danger badge-pill"><a href="#">OFF</a></span> -->
           <span ><i class="fas fa-snowflake text-info"></i></span>
           <span ><i class="fas fa-fire text-danger"></i></span>
-          <a *ngIf="temperatura.auto" class="btn btn-success btn-circle btn-sm" href="#">
-            <i class="fas fa-check"></i>
+          <a *ngIf="temperatura.auto" class="btn btn-success btn-circle btn-sm" (click)="toggleTempAuto()">
+            <i class="fas fa-check text-white"></i>
           </a>
-          <a *ngIf="!temperatura.auto" class="btn btn-danger btn-circle btn-sm" href="#">
-              <i class="fas fa-times"></i>
+          <a *ngIf="!temperatura.auto" class="btn btn-danger btn-circle btn-sm" (click)="toggleTempAuto()">
+              <i class="fas fa-times text-white"></i>
             </a>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
