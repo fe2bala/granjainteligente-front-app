@@ -5,9 +5,10 @@
           <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Água</div>
           <div class="row no-gutters align-items-center">
             <div class="col-auto">
-              <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{agua.nivel}}%</div>
+              <div *ngIf="!agua" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Não Disponivel</div>
+              <div *ngIf="agua" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{agua.nivel}}%</div>
             </div>
-            <div class="col">
+            <div *ngIf="agua" class="col">
               <div class="progress progress-sm mr-2">
                 <div class="progress-bar bg-primary" role="progressbar" [style.width.%]="agua.nivel"  aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -19,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="card-body">
+    <div *ngIf="agua" class="card-body">
       <ul class="list-group">
         <li class="list-group-item d-flex justify-content-between align-items-center">
           Automático:
@@ -38,6 +39,17 @@
           pH:
           <a class="btn btn-warning btn-circle btn-sm" href="#" data-toggle="tooltip" data-placement="bottom" title="Contatar administrador">
               0.7
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!agua" class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Adicionar
+          <!-- <span class="badge badge-danger badge-pill"><a href="#">OFF</a></span> -->
+          <a  class="btn btn-primary btn-circle btn-sm">
+              <i class="fas fa-plus text-white"></i>
           </a>
         </li>
       </ul>

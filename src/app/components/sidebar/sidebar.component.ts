@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaiaService } from 'src/app/services/baia.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private baiaService: BaiaService) { }
+  private baias:Array<Object>=[];
   ngOnInit() {
+    this.baiaService.getBaias().subscribe((data:Array<Object>)=> {this.baias=data});
   }
 
 }

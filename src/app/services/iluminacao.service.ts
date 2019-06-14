@@ -5,14 +5,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class BaiaService {
-  baseUrl = environment.baseUrl
+export class IluminacaoService {
   
-  getBaia(id: number) {
-    return this.http.get(this.baseUrl+"/api/baias/"+id);
+  putIluminacao(id: number,params) {
+    return this.http.put(environment.baseUrl+"/api/luminosidade/"+id,params)
   }
+
   constructor(private http: HttpClient) { }
-  getBaias(){
-    return this.http.get(this.baseUrl+"/api/baias")
-  }
 }

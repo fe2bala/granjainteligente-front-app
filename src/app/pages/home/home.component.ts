@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
     this.baiaService.getBaias().subscribe((data:Array<Object>)=>{
       this.baias=data
-
     });
   }
 

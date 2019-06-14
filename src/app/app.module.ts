@@ -10,6 +10,10 @@ import { TemperaturaCardComponent } from './components/temperatura-card/temperat
 import { AguaCardComponent } from './components/agua-card/agua-card.component';
 import { ComidaCardComponent } from './components/comida-card/comida-card.component';
 import { IluminacaoCardComponent } from './components/iluminacao-card/iluminacao-card.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { BaiaDetailsComponent } from './pages/baia-details/baia-details.component';
+import { BaiaItemComponent } from './components/baia-item/baia-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { IluminacaoCardComponent } from './components/iluminacao-card/iluminacao
     TemperaturaCardComponent,
     AguaCardComponent,
     ComidaCardComponent,
-    IluminacaoCardComponent
+    IluminacaoCardComponent,
+    PageNotFoundComponent,
+    FooterComponent,
+    BaiaDetailsComponent,
+    BaiaItemComponent
   ],
   imports: [
     BrowserModule,
