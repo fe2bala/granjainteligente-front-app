@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaiaService } from 'src/app/services/baia.service';
+import { timeout } from 'q';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,17 @@ import { BaiaService } from 'src/app/services/baia.service';
 })
 export class HomeComponent implements OnInit {
 
-  public baias:Array<Object>=[];
+  public baias: Array<Object> = [];
   constructor(private baiaService: BaiaService) { }
 
   ngOnInit() {
+    setInterval(() => {
+      this.baiaService.getBaias().subscribe((data: Array<Object>) => {
+        this.baias = data
+      })
 
-    this.baiaService.getBaias().subscribe((data:Array<Object>)=>{
-      this.baias=data
-    });
+    }, 2000);
   }
+
 
 }
