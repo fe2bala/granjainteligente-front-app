@@ -1,0 +1,47 @@
+<!-- Earnings (Monthly) Card Example -->
+
+  <div class="card border-left-danger shadow h-100 py-2">
+    <div class="card-body">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Temperatura</div>
+          <div *ngIf="!temperatura" class="h5 mb-0 font-weight-bold text-gray-800">Não disponivel</div>          
+          <div *ngIf="temperatura" class="h5 mb-0 font-weight-bold text-gray-800">{{temperatura.currentTemperature}}°C</div>
+        </div>
+        <div class="col-auto">
+          <i class="fas fa-thermometer-three-quarters fa-2x text-gray-500"></i>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="temperatura" class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Automático:
+          <!-- <span class="badge badge-danger badge-pill"><a href="#">OFF</a></span> -->
+          <span ><i class="fas fa-snowflake text-info"></i></span>
+          <span ><i class="fas fa-fire text-danger"></i></span>
+          <a *ngIf="temperatura.auto" class="btn btn-success btn-circle btn-sm" (click)="toggleTempAuto()">
+            <i class="fas fa-check text-white"></i>
+          </a>
+          <a *ngIf="!temperatura.auto" class="btn btn-danger btn-circle btn-sm" (click)="toggleTempAuto()">
+              <i class="fas fa-times text-white"></i>
+            </a>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Ideal:
+          <span>{{temperatura.temperatureSet-2}}~{{temperatura.temperatureSet+2}}°C</span>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!temperatura" class="card-body">
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Adicionar
+          <!-- <span class="badge badge-danger badge-pill"><a href="#">OFF</a></span> -->
+          <a  class="btn btn-primary btn-circle btn-sm">
+              <i class="fas fa-plus text-white"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
