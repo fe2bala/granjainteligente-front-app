@@ -1,0 +1,13 @@
+@media (min-width: 767px) {
+    .marginzona{
+        margin-left: 14rem !important;
+    }
+}
+@media (max-width: 767px) {
+.marginzona{
+    margin-left: 6rem !important;
+}
+}
+.btn-azul{
+    background-color: #4e73df;
+}
