@@ -6,7 +6,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col-auto">
               <div *ngIf="!comida" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Não Disponivel</div>              
-              <div *ngIf="comida" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{comida.nivel}}%</div>
+              <div *ngIf="comida" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{comida.nivel|number:'0.0-1'}}%</div>
             </div>
             <div *ngIf="comida" class="col">
               <div class="progress progress-sm mr-2">

@@ -6,7 +6,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col-auto">
               <div *ngIf="!agua" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Não Disponivel</div>
-              <div *ngIf="agua" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{agua.nivel}}%</div>
+              <div *ngIf="agua" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{agua.nivel|number:'0.0-1'}}%</div>
             </div>
             <div *ngIf="agua" class="col">
               <div class="progress progress-sm mr-2">
