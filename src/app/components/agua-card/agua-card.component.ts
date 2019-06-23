@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AguaService } from 'src/app/services/agua.service';
 
 @Component({
   selector: 'app-agua-card',
@@ -8,12 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AguaCardComponent implements OnInit {
 
   @Input() agua = {};
-  constructor() { }
+  constructor(private aguaService: AguaService) { }
 
   ngOnInit() {
   }
   toggleWaterAuto(){
     this.agua["auto"] = !this.agua["auto"]
+    this.aguaService.putAgua(this.agua["id"],this.agua).subscribe((data)=>{},erro=>console.log(erro))
   }
 
 }

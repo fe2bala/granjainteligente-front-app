@@ -6,7 +6,7 @@
         <div class="col mr-2">
           <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Temperatura</div>
           <div *ngIf="!temperatura" class="h5 mb-0 font-weight-bold text-gray-800">Não disponivel</div>          
-          <div *ngIf="temperatura" class="h5 mb-0 font-weight-bold text-gray-800">{{temperatura.currentTemperature}}°C</div>
+          <div *ngIf="temperatura" class="h5 mb-0 font-weight-bold text-gray-800">{{temperatura.currentTemperature|number:'0.0-1'}}°C</div>
         </div>
         <div class="col-auto">
           <i class="fas fa-thermometer-three-quarters fa-2x text-gray-500"></i>
