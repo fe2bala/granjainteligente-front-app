@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AlimentoService } from 'src/app/services/alimento.service';
 
 @Component({
   selector: 'app-comida-card',
@@ -8,13 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ComidaCardComponent implements OnInit {
 
   @Input() comida={};
-  constructor() { }
+  constructor(private alimentoService: AlimentoService) { }
 
   ngOnInit() {
   }
   toggleFoodAuto(){
     this.comida["auto"] = !this.comida["auto"]
-    //comando para atualizar no banco 
+    this.alimentoService.putAlimento(this.comida["id"],this.comida).subscribe((data)=>{},erro=>console.log(erro))
   }
 
 }
