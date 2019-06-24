@@ -8,14 +8,15 @@ import { TemperaturaService } from 'src/app/services/temperatura.service';
 })
 export class TemperaturaCardComponent implements OnInit {
 
-  @Input() temperatura={};
+  @Input() temperatura = {};
   constructor(private temperaturaService: TemperaturaService) { }
 
   ngOnInit() {
   }
-  toggleTempAuto(){
+
+  toggleTempAuto() {
     this.temperatura["auto"] = !this.temperatura["auto"]
-    this.temperaturaService.putTemperatura(this.temperatura["id"],this.temperatura).subscribe((data)=>{},erro=>console.log(erro))
+    this.temperaturaService.putTemperatura(this.temperatura["id"], this.temperatura).subscribe((data) => { }, erro => console.log(erro))
   }
 
 }
