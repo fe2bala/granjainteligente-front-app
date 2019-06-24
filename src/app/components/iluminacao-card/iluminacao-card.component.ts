@@ -8,14 +8,15 @@ import { IluminacaoService } from 'src/app/services/iluminacao.service';
 })
 export class IluminacaoCardComponent implements OnInit {
 
-  @Input() iluminacao={};
+  @Input() iluminacao = {};
   constructor(private iluminacaoService: IluminacaoService) { }
 
   ngOnInit() {
+    // console.log(this.iluminacao);
   }
-  toggleLight(){
+  toggleLight() {
     this.iluminacao["estado"] = !this.iluminacao["estado"]
-    this.iluminacaoService.putIluminacao(this.iluminacao["id"],this.iluminacao).subscribe((data)=>{},erro=>console.log(erro)
+    this.iluminacaoService.putIluminacao(this.iluminacao["id"], this.iluminacao).subscribe((data) => { }, erro => console.log(erro)
     )
   }
 

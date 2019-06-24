@@ -1,8 +1,8 @@
-  <!-- Nav Item - Charts -->
+<!-- Nav Item - Charts -->
 
-      <a class="nav-link" routerLink="/baiaDetails/{{baia.id}}">
-        <i class="fas fa-fw fa-egg" *ngIf="baia.age<=10"></i>
-        <i class="fas fa-fw fa-kiwi-bird" *ngIf="baia.age>10&&baia.age<15"></i>
-        <i class="fas fa-fw fa-crow" *ngIf="baia.age>15"></i>
+<a class="nav-link" routerLink="/baiaDetails/{{baia.id}}">
+  <i class="fas fa-fw fa-egg" *ngIf="baia.age<=10"></i>
+  <i class="fas fa-fw fa-kiwi-bird" *ngIf="baia.age>10&&baia.age<25"></i>
+  <i class="fas fa-fw fa-crow" *ngIf="baia.age>25"></i>
 
-        <span>Baia {{baia.name}}</span></a>
+  <span>Baia {{baia.name}}</span></a>
