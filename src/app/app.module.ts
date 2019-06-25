@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { FooterComponent } from './components/footer/footer.component';
 import { BaiaDetailsComponent } from './pages/baia-details/baia-details.component';
 import { BaiaItemComponent } from './components/baia-item/baia-item.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { BaiaItemComponent } from './components/baia-item/baia-item.component';
     PageNotFoundComponent,
     FooterComponent,
     BaiaDetailsComponent,
-    BaiaItemComponent
+    BaiaItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
