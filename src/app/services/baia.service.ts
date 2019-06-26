@@ -18,4 +18,7 @@ export class BaiaService {
   putBaia(id: number, baia) {
     return this.http.put(this.baseUrl + "/api/baias/" + id, baia)
   }
+  postBaia(baia){
+    return this.http.post(this.baseUrl +"/api/baias",baia)
+  }
 }
