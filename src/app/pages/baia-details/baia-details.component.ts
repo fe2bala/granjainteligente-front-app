@@ -9,16 +9,16 @@ import { BaiaService } from 'src/app/services/baia.service';
 })
 export class BaiaDetailsComponent implements OnInit {
 
-  public id:number;
-  public baia:object={};
-  constructor(private route : ActivatedRoute,private baiaService: BaiaService) { }
+  public id: number;
+  public baia: object = {};
+  constructor(private route: ActivatedRoute, private baiaService: BaiaService) { }
 
   ngOnInit() {
-    this.id= +this.route.snapshot.paramMap.get('id');
-    console.log("aaaaaaa")
-    this.baiaService.getBaia(this.id).subscribe(data=>{
-      console.log("aqqaa")
-      this.baia=data
+    this.id = +this.route.snapshot.paramMap.get('id');
+    // console.log("aaaaaaa")
+    this.baiaService.getBaia(this.id).subscribe(data => {
+      // console.log("aqqaa")
+      this.baia = data
     });
   }
 
