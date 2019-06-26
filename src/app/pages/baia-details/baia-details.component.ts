@@ -15,7 +15,11 @@ export class BaiaDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id= +this.route.snapshot.paramMap.get('id');
-    this.baiaService.getBaia(this.id).subscribe
+    console.log("aaaaaaa")
+    this.baiaService.getBaia(this.id).subscribe(data=>{
+      console.log("aqqaa")
+      this.baia=data
+    });
   }
 
 }
