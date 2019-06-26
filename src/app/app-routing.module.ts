@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { BaiaComponent } from './components/baia/baia.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CriaBaiaComponent } from './pages/cria-baia/cria-baia.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: "home", component: HomeComponent
+  },
+  {
+    path: "create", component: CriaBaiaComponent
   },
   {
     path: "baiaDetails/:id", component: BaiaComponent

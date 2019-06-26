@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BaiaDetailsComponent } from './pages/baia-details/baia-details.component';
 import { BaiaItemComponent } from './components/baia-item/baia-item.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CriaBaiaComponent } from './pages/cria-baia/cria-baia.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './pages/login/login.component';
     FooterComponent,
     BaiaDetailsComponent,
     BaiaItemComponent,
-    LoginComponent
+    LoginComponent,
+    CriaBaiaComponent
   ],
   imports: [
     BrowserModule,
