@@ -13,7 +13,7 @@
       </div>
 
       <div class="container mt-4">
-        <form>
+        <form [formGroup]="criaBaiaForm" (ngSubmit)="onSubmit()">
           <div class="form-group row">
             <label for="name" class="col-lg-3 col-sm-6col-form-label">Identificação
               da Baia</label>
@@ -21,7 +21,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-fw fa-warehouse"></i></div>
               </div>
-              <input type="text" class="form-control" id="name" placeholder="">
+              <input type="text" class="form-control" id="name" formControlName="name">
             </div>
           </div>
           <div class="form-group row">
@@ -30,7 +30,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-fw fa-kiwi-bird"></i></div>
               </div>
-              <input type="text" class="form-control" id="name" placeholder="">
+              <input type="text" class="form-control" id="age" formControlName="age">
             </div>
           </div>
           <div class="form-group row">
@@ -39,7 +39,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-fw fa-temperature-low"></i></div>
               </div>
-              <input type="text" class="form-control" id="name" placeholder="">
+              <input type="text" class="form-control" id="temperaturaSet" formControlName="temperaturaSet">
             </div>
           </div>
           <div class="form-group row">
@@ -48,7 +48,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-fw fa-drumstick-bite"></i></div>
               </div>
-              <input type="text" class="form-control" id="name" placeholder="0 a 100">
+              <input type="text" class="form-control" id="comidaSet" placeholder="0 a 100" formControlName="comidaSet">
             </div>
           </div>
           <div class="form-group row">
@@ -57,7 +57,7 @@
               <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fas fa-fw fa-tint"></i></div>
               </div>
-              <input type="text" class="form-control" id="name" placeholder="0 a 100">
+              <input type="text" class="form-control" id="aguaSet" placeholder="0 a 100" formControlName="aguaSet">
             </div>
           </div>
 
@@ -66,14 +66,15 @@
               <legend class="col-form-label col-lg-3 col-sm-6pt-0">Iluminação</legend>
               <div class="col-lg-9">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="iluminacaoOn" value="option1"
-                    checked>
+                  <input class="form-check-input" type="radio" name="iluminacao" id="iluminacaoOn" value="1" checked
+                    formControlName="iluminacao">
                   <label class="form-check-label" for="iluminacaoOn">
                     ON
                   </label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="iluminacaoOff" value="option2">
+                  <input class="form-check-input" type="radio" name="iluminacao" id="iluminacaoOff" value="0"
+                    formControlName="iluminacao">
                   <label class="form-check-label" for="iluminacaoOff">
                     OFF
                   </label>
@@ -84,7 +85,7 @@
           <div class="form-group row">
             <div class="col-lg-10">
               <button type="submit" class="btn btn-success mr-2"><i class="fas fa-fw fa-check"></i> Criar Baia</button>
-              <button type="submit" class="btn btn-danger"><i class="fas fa-fw fa-times"></i> Cancelar</button>
+              <a href="/home" class="btn btn-danger"><i class="fas fa-fw fa-times"></i> Cancelar</a>
             </div>
           </div>
         </form>
