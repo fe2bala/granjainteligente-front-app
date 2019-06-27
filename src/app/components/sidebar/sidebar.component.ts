@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BaiaService } from 'src/app/services/baia.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,7 @@ import { BaiaService } from 'src/app/services/baia.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private baiaService: BaiaService) { }
+  constructor(private baiaService: BaiaService, private router: Router) { }
   private baias: Array<Object> = [];
   ngOnInit() {
     // setInterval(() => {
@@ -17,6 +18,15 @@ export class SidebarComponent implements OnInit {
     //   })
 
     // }, 2000);
+  }
+
+  doLogout() {
+    window.gapi.auth2.getAuthInstance().signOut().then(() => {
+      if (!window.gapi.auth2.getAuthInstance().isSignedIn.get()) {
+        localStorage.setItem('isSignedIn', 'false');
+        this.router.navigate(['/login']);
+      }
+    });
   }
 
 }
