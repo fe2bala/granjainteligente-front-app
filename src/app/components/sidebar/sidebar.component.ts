@@ -19,8 +19,8 @@ export class SidebarComponent implements OnInit {
    }
 
   doLogout() {
-    window.gapi.auth2.getAuthInstance().signOut().then(() => {
-      if (!window.gapi.auth2.getAuthInstance().isSignedIn.get()) {
+    window['gapi'].auth2.getAuthInstance().signOut().then(() => {
+      if (!window['gapi'].auth2.getAuthInstance().isSignedIn.get()) {
         localStorage.setItem('isSignedIn', 'false');
         this.router.navigate(['/login']);
       }
