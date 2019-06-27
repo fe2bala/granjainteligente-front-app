@@ -7,25 +7,26 @@ import { LoginComponent } from './pages/login/login.component';
 import { CriaBaiaComponent } from './pages/cria-baia/cria-baia.component';
 import { BaiaDetailsComponent } from './pages/baia-details/baia-details.component';
 import { EditaBaiaComponent } from './pages/edita-baia/edita-baia.component';
+import { LoggedInGuard } from './guards/logged-in.guard';
 
 const routes: Routes = [
   {
-    path: "", redirectTo: "/home", pathMatch: "full"
+    path: "", redirectTo: "/home", pathMatch: "full", canActivate: [LoggedInGuard]
   },
   {
     path: "login", component: LoginComponent
   },
   {
-    path: "home", component: HomeComponent
+    path: "home", component: HomeComponent, canActivate: [LoggedInGuard]
   },
   {
-    path: "create", component: CriaBaiaComponent
+    path: "create", component: CriaBaiaComponent, canActivate: [LoggedInGuard]
   },
   {
-    path: "baiaDetails/:id", component: BaiaDetailsComponent
+    path: "baiaDetails/:id", component: BaiaDetailsComponent, canActivate: [LoggedInGuard]
   },
   {
-    path: "editarBaia/:id", component: EditaBaiaComponent
+    path: "editarBaia/:id", component: EditaBaiaComponent, canActivate: [LoggedInGuard]
   },
   {
     path: "**", component: PageNotFoundComponent
@@ -34,6 +35,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [LoggedInGuard]
 })
 export class AppRoutingModule { }
