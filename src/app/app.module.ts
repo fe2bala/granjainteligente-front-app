@@ -41,7 +41,8 @@ import { EditaBaiaComponent } from './pages/edita-baia/edita-baia.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

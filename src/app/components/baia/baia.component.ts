@@ -12,11 +12,10 @@ export class BaiaComponent implements OnInit {
   constructor(private baiaService: BaiaService) { }
 
   ngOnInit() {
-    // this.putBaia();
+
   }
 
   putBaia() {
-    this.baia["name"] = 'testesasdasd';
     this.baiaService.putBaia(this.baia["id"], this.baia).subscribe((data) => {
       console.log(data);
     });
