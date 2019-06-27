@@ -21,7 +21,7 @@ export class EditaBaiaComponent implements OnInit {
   public sensorLuminosidadeId: number;
   public baia: object = {};
 
-  editaBaiaForm = new FormGroup({
+  public editaBaiaForm = new FormGroup({
     age: new FormControl(''),
     temperaturaNivel: new FormControl(''),
     aguaNivel: new FormControl(''),
@@ -33,18 +33,29 @@ export class EditaBaiaComponent implements OnInit {
 
   ngOnInit() {
     this.getBaia();
+    
+
+
   }
 
   getBaia() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
     this.baiaService.getBaia(this.id).subscribe(data => {
       this.baia = data;
+      this.editaBaiaForm.controls['age'].setValue(this.baia['age']);
+      this.editaBaiaForm.controls['temperaturaNivel'].setValue(this.baia['temperatura']['currentTemperature']);
+      this.editaBaiaForm.controls['aguaNivel'].setValue(this.baia['agua']['nivel']);
+      this.editaBaiaForm.controls['ph'].setValue(this.baia['agua']['ph']);
+
+      this.editaBaiaForm.controls['comidaNivel'].setValue(this.baia['alimento']['nivel']);
+
+      
       // console.log(this.baia);
     });
   }
 
   onSubmit() {
+    debugger;
     let input = this.editaBaiaForm.value;
     this.sensorAguaId = this.baia["agua"]["id"];
     this.sensorAlimentoId = this.baia["alimento"]["id"];
@@ -92,14 +103,13 @@ export class EditaBaiaComponent implements OnInit {
       descricao: this.baia["luminosidade"]["descricao"],
       estado: this.baia["luminosidade"]["estado"]
     };
-
-    // console.log(baiaEditada);
+    
     this.baiaService.putBaia(this.id, baiaEditada).subscribe(data => console.log(data));
     this.aguaService.putAgua(this.sensorAguaId, sensorAgua).subscribe(data => console.log(data));
     this.alimentoService.putAlimento(this.sensorAlimentoId, sensorAlimento).subscribe(data => console.log(data));
     this.iluminacaoService.putIluminacao(this.sensorLuminosidadeId, sensorLuminosidade).subscribe(data => console.log(data));
     this.temperaturaService.putTemperatura(this.sensorTemperaturaId, sensorTemperatura).subscribe(data => console.log(data));
-    this.router.navigate(['/home']);
+    this.router.navigate(['/baiaDetails/'+this.id]);
   }
 
 }

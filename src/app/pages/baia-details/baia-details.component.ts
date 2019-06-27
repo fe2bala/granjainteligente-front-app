@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BaiaService } from 'src/app/services/baia.service';
 
@@ -11,15 +11,23 @@ export class BaiaDetailsComponent implements OnInit {
 
   public id: number;
   public baia: object = {};
-  constructor(private route: ActivatedRoute, private baiaService: BaiaService) { }
-
-  ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    // console.log("aaaaaaa")
-    this.baiaService.getBaia(this.id).subscribe(data => {
-      // console.log("aqqaa")
-      this.baia = data
+  constructor(private route: ActivatedRoute, private baiaService: BaiaService) { 
+    route.params.subscribe(val => {
+      this.id = +this.route.snapshot.paramMap.get('id');
+      setInterval(() => {
+        this.baiaService.getBaia(this.id).subscribe((data) => {
+          this.baia = data
+        })
+  
+      }, 2000);
     });
   }
+  
+  
+  ngOnInit() {
+    
+
+  }
+  
 
 }

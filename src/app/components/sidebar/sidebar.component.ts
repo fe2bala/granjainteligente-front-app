@@ -10,13 +10,11 @@ export class SidebarComponent implements OnInit {
 
   constructor(private baiaService: BaiaService) { }
   private baias: Array<Object> = [];
-  ngOnInit() {
-    // setInterval(() => {
-    //   this.baiaService.getBaias().subscribe((data: Array<Object>) => {
-    //     this.baias = data
-    //   })
+  ngOnInit() {   
+    this.baiaService.getBaias().subscribe((data: Array<Object>) => {
+      this.baias = data
+    })
 
-    // }, 2000);
-  }
+   }
 
 }
