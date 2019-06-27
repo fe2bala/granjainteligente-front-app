@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   doLogin() {
     window.gapi.auth2.getAuthInstance().signIn().then(() => {
       if (window.gapi.auth2.getAuthInstance().isSignedIn.get()) {
+        localStorage.setItem('isSignedIn', 'true');
         this.router.navigate(['/home']);
       }
     });
