@@ -56,11 +56,11 @@ export class CriaBaiaComponent implements OnInit {
         auto: true
       },
       luminosidade: {
-        luminosidade: (input.iluminacao == 0) ? 'false' : 'true',
+        luminosidade: true,
         auto: true,
         data: null,
         descricao: "sensor iluminacao",
-        estado: true
+        estado: (input.iluminacao == 0) ? 'false' : 'true'
       },
       status: true
     };

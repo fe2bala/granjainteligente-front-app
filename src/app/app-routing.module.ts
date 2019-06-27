@@ -6,6 +6,7 @@ import { BaiaComponent } from './components/baia/baia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CriaBaiaComponent } from './pages/cria-baia/cria-baia.component';
 import { BaiaDetailsComponent } from './pages/baia-details/baia-details.component';
+import { EditaBaiaComponent } from './pages/edita-baia/edita-baia.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: "baiaDetails/:id", component: BaiaDetailsComponent
+  },
+  {
+    path: "editarBaia/:id", component: EditaBaiaComponent
   },
   {
     path: "**", component: PageNotFoundComponent

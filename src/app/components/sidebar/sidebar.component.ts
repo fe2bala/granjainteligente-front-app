@@ -9,14 +9,14 @@ import { BaiaService } from 'src/app/services/baia.service';
 export class SidebarComponent implements OnInit {
 
   constructor(private baiaService: BaiaService) { }
-  private baias:Array<Object>=[];
+  private baias: Array<Object> = [];
   ngOnInit() {
-    setInterval(() => {
-      this.baiaService.getBaias().subscribe((data: Array<Object>) => {
-        this.baias = data
-      })
+    // setInterval(() => {
+    //   this.baiaService.getBaias().subscribe((data: Array<Object>) => {
+    //     this.baias = data
+    //   })
 
-    }, 2000);
+    // }, 2000);
   }
 
 }

@@ -17,6 +17,7 @@ import { BaiaItemComponent } from './components/baia-item/baia-item.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CriaBaiaComponent } from './pages/cria-baia/cria-baia.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditaBaiaComponent } from './pages/edita-baia/edita-baia.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BaiaDetailsComponent,
     BaiaItemComponent,
     LoginComponent,
-    CriaBaiaComponent
+    CriaBaiaComponent,
+    EditaBaiaComponent
   ],
   imports: [
     BrowserModule,
